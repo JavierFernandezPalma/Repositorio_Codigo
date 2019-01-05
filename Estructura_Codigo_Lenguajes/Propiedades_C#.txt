@@ -1,0 +1,15 @@
+
+// Guías en el editor de codigo Visual Estudio
+
+	Nota: se requiere instalar el complemento, para ello en menú “Herramientas” la opción de “Extensiones y actualizaciones”,
+	luego opción de “En linea” y en el buscador del panel derecho escribiremos “Indent Guides”.
+
+// Configurar y publicar en el IIS un proyecto ASP.NET
+
+	1. Panel de control => Programas => Caracteristicas de Windows => Habilitar <<Internet Information Services>>
+	2. Configurar el IIS: Panel de control => Sistema y seguridad => Herramientas administrativas =>  Administrador de internet information services <<Atajo win + r, tecleamos inetmgr>>
+	3. Configurar IIS para que levante aplicativos ASP.NET: CMD (win + r, escribimos CMD) copiar en consola => cd C:\Windows\Microsoft.NET\Framework\v4.0.30319\ => aspnet_regiis.exe -ir
+	4. En el administrador del IIS => Grupo de aplicaciones => por defecto apunta a DefaultAppPool, doble clik y seleccionamos la version mas reciente.
+	5. Publicar el proyecto: En el proyecto click derecho en Web => Publish => publish method (File System) => ruta donde va a estar el proyecto (inetpub/wwwroot por defecto).
+	6. Convertir publicación en aplicación: En IIS desplegar las carpetas, si tiene icono de carpeta no ha sido convertida en aplicación => click derecho (convertir aplicación).
+	7. Ruta del servidor + nombre aplicación => localhost/NombreAplicacion. 

@@ -1,0 +1,139 @@
+Usu: JavierFernandezPalma ; Pas:Goyo*3456
+
+CONFIGUARACION GUIT
+-----------------------------------------------------------------------------------------------------
+
+//Para configurar usuario
+	git config --global user.name "<<Nombre>>"
+
+//Para ver configuracion de nombre
+	git config --global user.name
+
+//Configurar correo
+	git config --global user.email "totojavi81@hotmail.com"
+
+//Configurar colores para notificaciones
+	git config --global color.ui true
+
+//Para ver todas las configuraciones
+	git config --global --list
+
+
+
+PRIMEROS PASOS
+-----------------------------------------------------------------------------------------------------
+Posicionarse en la raiz a monitorear
+
+//Inicio del proyecto monitoreo
+	git init 
+
+//Estado del proyecto <<Que esta pasando en nuestro proyecto>>
+	git status
+
+//Agregar archivos
+	git add <<nombre de archivo>>
+
+//Agregar archivos todos
+	git add -A
+
+//Guardar cambios realizados
+	git commit -m "<<Mensaje del commit>>"
+
+//Comparar los cambios realizados
+	git diff
+
+
+//Verificar la versiones
+	git log
+
+//Para ver en que Rama se encuentran los archivos añadidos
+	git checkout
+
+//Para mostrar todos los commit
+	git checkout master
+
+//Para imprimir todos los commit en archivo
+	git log > commits.txt
+
+
+OTROS COMANDOS
+-----------------------------------------------------------------------------------------------------
+//Para limpiar Guit
+	cls o clear
+
+//Para salir
+	exit
+
+//Para salir de Help o Log
+	q
+
+//Colocar alias a los comandos git
+	git config --global alias.<<Alias>> "Nombre del comando"   Ejm: git config --global alias.s "status"
+
+//Cambiar nombre de hito
+	git commit --amend -m "<<Nuevo Nombre>>" estando en el hito a modificar
+
+//cambiar nombre de un archivo desde Git
+	git mv <<Nombre del archivo>> <<Nuevo nombre>>
+
+//Eliminar archivo en Git
+	git rm <<nombre del archivo>>g
+
+
+
+RAMAS <<Para hacer un git en un proyecto paralelo>>
+-----------------------------------------------------------------------------------------------------
+
+//Para mostrar las ramas
+	git branch
+
+//Para crear una rama
+	git branch <<nombre rama>>
+
+//Para borrar una rama
+	git branch -D <<nombre rama>>
+
+//Para mostrar todo lo que ocurre en todas las ramas
+	git log --oneline --decorate --all --graph
+
+
+
+FUSIONES <<Para adicionar lo de una Rama a otra>>
+-----------------------------------------------------------------------------------------------------
+
+//Para fusionar una rama con otra estando en la rama que absorve
+	git marge <<Rama que va a ser absorvida>>
+
+
+
+VOLVER EN EL TIEMPO
+-----------------------------------------------------------------------------------------------------
+//Regresar a una versión previa sin recuperar cambios de esa versión
+	git reset --soft <<Id del hito>>
+
+//Regresar a una versión previa recuperando cambios
+	git reset --hard <<Id del hito>>
+
+//Histórico de todas las versiones
+	git reflog
+
+//Para borrar
+	git reset --hard  //Borra todo
+	git reset --soft  //Borra commit pero no borra codigo
+	git reset --mixed //Borra codigo pero no borra commit
+	git reset <<Nombre del archivo o conjunto de archivos>>  ejm <<carpeta>>/*.scss
+
+
+PARA IGNORAR CARPETAS Y/O ARCHIVOS
+-----------------------------------------------------------------------------------------------------
+//Crear un archivo con extención .gitignore a la altura de la carpeta git y luego colocar en su interior los archivos
+	que se deseen ignorar.
+
+
+PARA AGREGAR CAMBIOS A GITHUB
+-----------------------------------------------------------------------------------------------------
+// git remote add origin <<Ruta url de GitHub arrojada por el programa al crear un repositorio>>
+
+
+//Enviado cambios a repositorio
+	git push origin master

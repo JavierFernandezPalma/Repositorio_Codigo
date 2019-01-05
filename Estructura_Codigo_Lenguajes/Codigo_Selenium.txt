@@ -1,0 +1,458 @@
+using OpenQA.Selenium;                NoTa: Librerias que debe tener (<Selenium.Firefox.WebDriver.0.22.0>  ,  <Selenium.Support.3.141.0>  ,  <Selenium.WebDriver.3.141.0>
+using OpenQA.Selenium.Chrome;						<Selenium.WebDriver.ChromeDriver.2.43.0>  ,  <Selenium.WebDriver.IEDriver.3.141.0>)
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+	    Console.WriteLine("Hola Mundo");
+            Console.ReadKey();
+            IWebDriver driver = new ChromeDriver();
+            driver.Navigate().GoToUrl("http://my.rp1cloud.com/");
+            driver.FindElement(By.Name("accountLogin")).SendKeys("milena.suarez@tribeca.com.co");
+            driver.FindElement(By.Name("accountPassword")).SendKeys("Milena123");
+            driver.FindElement(By.ClassName("submit")).Click();
+            //driver.FindElement(By.ClassName("icon-container")).Click();
+            driver.Navigate().GoToUrl("https://my.rp1cloud.com/meetings/schedule");
+
+            driver.Manage().Window.Maximize(); //Maximixar ventana del navegador
+
+            //Para buscar elementos en la pagina
+
+	    IWebElement input = driver.FindElement(By.Id("xx"));
+		input.SendKeys("xxx"); // Para escribir
+
+		IWebElement btn = driver.FindElement(By.Id("xx"));
+		btn.Click(); // Para hacer clic
+            
+            //driver.Quit();
+
+
+
+           // Seleccionar en una lista
+
+		var driver = new FirefoxDriver();
+		driver.Navigate().GoToUrl("http://my.rp1cloud.com/");
+		var option = driver.FindElement(By.Id("xxx"));
+		var selectElement = new SelectElement(option);
+		System.Threading.Thread.Sleep(5000); // Pausa el curso de los eventos por cinco segundos
+		selectElement.SelectByText("la selección");
+		Console.Read();
+
+	  // Escribir en un campo de texto y luego borrar
+
+		var driver = new FirefoxDriver();
+		driver.Navigate().GoToUrl("http://my.rp1cloud.com/");
+		IWebElement element = driver.FindElement(By.Id("IdElemento");
+		element.SendKeys("xxx");
+		System.Threading.Thread.Sleep(6000); // Pausa el curso de los eventos por cinco segundos
+		element.Clear();                     // Limpiar elemento
+		Console.Read();
+
+
+       	 // Seleccionar casilla
+
+		var driver = new FirefoxDriver();
+		driver.Navigate().GoToUrl("http://my.rp1cloud.com/");
+		IWebElement element = driver.FindElement(By.Id("Casilla");
+		System.Threading.Thread.Sleep(6000); // Pausa el curso de los eventos por cinco segundos
+		element.Click();
+		Console.Read();
+
+	// Seleccionar botón de radio
+		
+		var driver = new FirefoxDriver();
+		driver.Navigate().GoToUrl("http://my.rp1cloud.com/");
+		IWebElement element = driver.FindElement(By.Name("NombreElemento");
+		System.Threading.Thread.Sleep(6000); // Pausa el curso de los eventos por cinco segundos
+		element.Click();
+		Console.Read();
+
+	// Seleccionar un boton y hacer enter
+
+		var driver = new FirefoxDriver();
+		driver.Navigate().GoToUrl("http://my.rp1cloud.com/");
+		IWebElement element = driver.FindElement(By.Name("boton");
+		System.Threading.Thread.Sleep(6000); // Pausa el curso de los eventos por cinco segundos
+		element.SendKeys(OpenQA.Selenium.Keys.Enter);
+		Console.Read();
+
+	// Seleccionar elemento con XPath
+
+
+		var driver = new FirefoxDriver();
+		driver.Navigate().GoToUrl("http://my.rp1cloud.com/");
+		
+		try
+		{
+		  driver.FindElement(By.XPath("ReferenciaRelativa"));
+		}
+		catch (Exception e)
+		{
+		  Console.WriteLine(e.Message);
+		}
+	         Console.Read();
+
+
+	// Tabulador
+
+		dateBox.SendKeys(Keys.TAB);
+		
+
+	// Buscar en pagina link con texto exacto
+
+
+	    try
+            {
+                driver.FindElement(By.LinkText("Texto_Buscado")).Click();
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+
+            }
+
+
+	
+	// Buscar en pagina link con parte de texto exacto
+
+
+	    try
+            {
+                driver.FindElement(By.PartialLinkText("Parte_de_Texto_Buscado")).Click();
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+
+            }
+
+
+     // Interactuar por medio de coordenadas
+	    Actions action = new Actions(driver);         //using OpenQA.Selenium.Interactions;
+								using System.Threading;
+
+            action.MoveByOffset(300, 500).ContextClick().Build().Perform(); // Click derecho
+	    action.MoveByOffset(300, 500).ContextClick().Build().Perform(); // Click izquierdo
+
+
+
+	// Comandos
+
+
+            IWebElement webElement = driver.FindElement(By.TagName("body"));
+            webElement.SendKeys(Keys.Tab);
+            Thread.Sleep(5000);
+            webElement.SendKeys(Keys.Control + "t");
+
+            -----------------------------------------------
+
+	driver.FindElement(By.CssSelector("body"));
+
+            Actions action = new Actions(driver);
+
+            action.KeyDown(Keys.Control).SendKeys("t");
+
+          ----------------------------------------------------
+		driver.FindElement(By.TagName("body")).SendKeys(Keys.Control + ("t"));
+
+        }
+    }
+}
+
+
+----------------------------------------------------------
+PAGINAS TUTORIALES SELENIUM
+----------------------------------------------------------
+
+--Selenium Test usando NUnit Framework: http://toolsqa.com/selenium-webdriver/c-sharp/how-to-write-selenium-test-using-nunit-framework/
+--Selenium desde cero: https://www.youtube.com/watch?v=g0hiM8ZVPMg&list=PLjM3-neCG6qx4RFeq2X-TpWS_tJTk1qZP
+--Tutorial parte por parte selenium: https://www.youtube.com/watch?v=_GkWt0k4eG0&list=PLUY1lsOTtPeIrejCf8okrn86lZSFo4yUD
+--Ejecutar Navegador en modo sin cabeza: https://www.youtube.com/watch?v=-UY9jUwVTHg
+
+
+ public void IniciarNavegador()
+        {
+            driver.Navigate().GoToUrl("http://my.rp1cloud.com/");
+            driver.Manage().Window.Minimize(); //Minimixar ventana del navegador
+            driver.FindElement(By.Name("accountLogin")).SendKeys("milena.suarez@tribeca.com.co");
+            driver.FindElement(By.Name("accountPassword")).SendKeys("Milena123");
+            driver.FindElement(By.ClassName("submit")).Click();
+
+            //    IWebDriver driver2 = new FirefoxDriver();     // Iniciar session con Firefox
+            //    driver.Url = "http://my.rp1cloud.com/";
+
+        }
+
+        public void SeleccionarCalendario()
+        {
+
+            try
+            {
+                driver.Navigate().GoToUrl("https://my.rp1cloud.com/meetings/schedule");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        public void ProgramarReunion()
+        {
+            try
+            {
+                driver.FindElement(By.XPath("//*[@id='meeting-controls']/div/div[2]/div/div/button")).Click();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+
+        public void LlenarCampos()
+        {
+            driver.FindElement(By.Id("name")).SendKeys("VIDEOCONFERENCIA");
+            driver.FindElement(By.Name("startTime")).Clear();
+            driver.FindElement(By.Name("startTime")).SendKeys("10:35pm");
+
+        }
+
+        public void SeleccionarElemento()
+        {
+            var option = driver.FindElement(By.Name("timeZone"));
+            var selectElement = new SelectElement(option);
+            //System.Threading.Thread.Sleep(5000); // Pausa el curso de los eventos por cinco segundos
+            selectElement.SelectByText("Zulu");
+            Console.Read();
+        }
+
+
+        public int SeleccionarAnoMes()
+        {
+
+            int diferenciaMes, diferenciaAno;
+
+            string fecha = "19/11/2018 12:00:00";
+            Convert.ToDateTime(fecha);
+            Console.WriteLine("Fecha y hora: " + fecha);
+
+            int mesHoy = int.Parse(DateTime.Now.Month.ToString());
+            int anoHoy = int.Parse(DateTime.Now.Year.ToString());
+            int mesRegistro = int.Parse(Convert.ToDateTime(fecha).Month.ToString());
+            int anoRegistro = int.Parse(Convert.ToDateTime(fecha).Year.ToString());
+            int diaRegistro = int.Parse(Convert.ToDateTime(fecha).Day.ToString());
+
+            diferenciaMes = mesRegistro - mesHoy;
+            diferenciaAno = anoRegistro - anoHoy;
+
+            if (diferenciaAno == 0)
+            {
+
+                IWebElement webElement = driver.FindElement(By.Name("startDate"));
+                webElement.Click();
+
+                webElement = driver.FindElement(By.XPath("//*[@id='addMeetingForm']/div[2]/div[1]/div/div/div/table/thead/tr/th[3]")); //Seleccionar Mes Incremental
+
+                for (int i = 0; i < diferenciaMes; i++)
+                {
+                    webElement.Click();
+                }
+            }
+            else if (diferenciaAno > 0)
+            {
+                IWebElement webElement = driver.FindElement(By.Name("startDate"));
+                webElement.Click();
+
+                webElement = driver.FindElement(By.XPath("//*[@id='addMeetingForm']/div[2]/div[1]/div/div/div/table/thead/tr/th[3]")); //Seleccionar Mes Incremental
+
+                for (int i = 0; i < (diferenciaAno * 12) - mesHoy; i++)
+                {
+                    webElement.Click();
+                }
+
+                webElement = driver.FindElement(By.XPath("//*[@id='addMeetingForm']/div[2]/div[1]/div/div/div/table/thead/tr/th[3]")); //Seleccionar Mes Incremental
+
+                for (int i = 0; i < mesRegistro; i++)
+                {
+                    webElement.Click();
+                }
+
+            }
+
+            //webElement = driver.FindElement(By.XPath("//*[@id='addMeetingForm']/div[2]/div[1]/div/div/div/table/thead/tr/th[1]")); //Seleccionar Mes Decremental 
+            ////List<IWebElement> list = driver.FindElements(By.XPath("//*[@id='addMeetingForm']/div[2]/div[1]/div/div/div/div/table/tbody")).ToList();
+            return diaRegistro;
+        }
+
+        public void seleccionarDia(int dia)
+        {
+
+
+            int diaCalendario, j;
+
+
+            if (dia < 8)
+            {
+
+                for (int i = 1; i < 8; i++)
+                {
+                    var numDia = driver.FindElement(By.XPath("//*[@id='addMeetingForm']/div[2]/div[1]/div/div/div/div/table/tbody/tr[1]/td[" + i + "]"));
+                    diaCalendario = int.Parse(numDia.Text);
+                    Console.WriteLine("DiaCalendario: " + diaCalendario + " dia: " + dia);
+
+                    if ((diaCalendario == dia))
+                    {
+                        numDia.Click();
+                        Console.WriteLine("Encontrado");
+                        return;
+                    }
+
+                }
+
+            }
+
+            else if (dia > 1 && dia < 22)
+            {
+                j = 2;
+                do
+                {
+                    for (int i = 1; i < 8; i++)
+                    {
+                        var numDia = driver.FindElement(By.XPath("//*[@id='addMeetingForm']/div[2]/div[1]/div/div/div/div/table/tbody/tr[" + j + "]/td[" + i + "]"));
+                        diaCalendario = int.Parse(numDia.Text);
+                        Console.WriteLine("DiaCalendario: " + diaCalendario + " dia: " + dia);
+
+                        if ((diaCalendario == dia))
+                        {
+                            numDia.Click();
+                            Console.WriteLine("Encontrado");
+                            return;
+                        }
+
+                    }
+
+                    j = j + 1;
+
+                } while (j != 4);
+
+            }
+
+            if (dia > 15 && dia < 32)
+            {
+                j = 4;
+                do
+                {
+                    for (int i = 1; i < 8; i++)
+                    {
+                        var numDia = driver.FindElement(By.XPath("//*[@id='addMeetingForm']/div[2]/div[1]/div/div/div/div/table/tbody/tr[" + j + "]/td[" + i + "]"));
+                        diaCalendario = int.Parse(numDia.Text);
+                        Console.WriteLine("DiaCalendario: " + diaCalendario + " dia: " + dia);
+
+                        if ((diaCalendario == dia))
+                        {
+                            numDia.Click();
+                            Console.WriteLine("Encontrado");
+                            return;
+                        }
+
+                    }
+
+                    j = j + 1;
+
+                } while (j != 6);
+
+            }
+
+            if (dia > 29)
+            {
+                for (int i = 1; i < 8; i++)
+                {
+                    var numDia = driver.FindElement(By.XPath("//*[@id='addMeetingForm']/div[2]/div[1]/div/div/div/div/table/tbody/tr[6]/td[" + i + "]"));
+                    diaCalendario = int.Parse(numDia.Text);
+                    Console.WriteLine("DiaCalendario: " + diaCalendario + "dia: " + dia);
+
+                    if ((diaCalendario == dia))
+                    {
+                        numDia.Click();
+                        Console.WriteLine("Encontrado");
+                        return;
+                    }
+
+                }
+            }
+
+        }
+
+        public void AdicionarCorreo()
+        {
+
+            string correos = "totojavi81@hotmail.com|jaugustofernandez@unipanamericana.edu.co|jafernandez@axede.com.co";
+            string[] separarCorreos;
+            separarCorreos = correos.Split('|');
+            var contarCorreos = separarCorreos.Count();
+
+            for (int i = 0; i < separarCorreos.Count(); i++)
+            {
+                IWebElement webElement = driver.FindElement(By.Name("email"));
+                webElement.Click();
+                webElement.SendKeys(separarCorreos[i]);
+
+                webElement = driver.FindElement(By.XPath("//*[@id='addMeetingForm']/div[7]/div[2]/div/a"));
+                webElement.Click();
+
+            }
+
+        }
+
+        public void EscribirMensaje()
+        {
+            driver.FindElement(By.Name("message")).SendKeys("Mensaje opcional de la agenda.");
+        }
+
+        public void Ocultar()
+        {
+            Console.WriteLine(HoyAhora);
+            driver.Manage().Window.Minimize(); //Minimixar ventana del navegador
+        }
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace RobotAgenda
+{
+    class InicioRobot
+    {
+        static void Main(string[] args)
+        {
+
+            Program pr = new Program();
+
+            pr.IniciarNavegador();
+            pr.SeleccionarCalendario();
+            pr.ProgramarReunion();
+            pr.LlenarCampos();
+            int diaRegistro = pr.SeleccionarAnoMes();
+            pr.seleccionarDia(diaRegistro);
+            pr.AdicionarCorreo();
+            //pr.EscribirMensaje();
+
+        }
+    }
+}

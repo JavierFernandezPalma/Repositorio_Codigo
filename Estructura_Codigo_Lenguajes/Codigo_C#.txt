@@ -1,0 +1,29 @@
+
+
+// Listas en C#
+
+	    List<string> lista = new List<string>(); // Creación de lista con capacidad variable
+            lista.Add("Uno"); // Adicionar elemento tipo string a la lista
+            lista.Add("Tres,Cuatro");
+            Console.WriteLine(lista[1]); // Imprimir lista según indice
+
+// Convertir String a formato fecha
+
+	    string fecha = "19/11/2018 12:00:00";
+            Convert.ToDateTime(fecha);
+
+// Convertir String de minuscula a mayuscula y viceversa
+
+		String.ToUpper() // Minuscula a mayuscula
+		String.ToLower() // Mayuscula a minuscula
+
+// Archivo .Zip
+	url: para archivo Zip: https://www.variablenotfound.com/2011/07/aspnet-mvc-retorno-de-archivos-zip.html 
+
+
+
+
+-----------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
+
+Aprendamos de programación: https://aprendamosdeprogramacion.wordpress.com/category/tutoriales/
