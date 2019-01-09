@@ -1,0 +1,18 @@
+
+//Para eliminar archivos temporales
+	En <<ejecutar>> %temp% y temp, luego eliminar basura.
+
+
+//Liberaror de espacio en propiedades de equipo y borrar.
+
+
+//
+	Panel de control >> Sistema y seguridad >> Sistema >> Configuración avanzada del sistema >> Rendimiento; 
+	escoger (Ajustar para obtener el mejor rendimiento)
+
+//
+	Desplegar el msconfig y solamente seleccionar los procesadores, ademas el tiempo de espera colocar 15 segundos.
+	En la ventana Inicio de Windows desabilitar el arranque de programas no deseados.
+
+
+//Desfragmentar disco principal  

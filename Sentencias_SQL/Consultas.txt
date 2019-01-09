@@ -1,0 +1,8 @@
+
+
+//Seleccionar los registros que estan en una tabla pero en otra de referencia no
+	select * from <<Tabla A>> where <<Campo a compara de Tabla A>> not in (select <<Campo de la tabla B a comparar>> from <<Tabla B>>);
+
+
+//Agregar integridad referencial a dos tablas
+	ALTER TABLE nombre_tablaA ADD [CONSTRAINT símbolo] FOREIGN KEY(Campo Tabla A) REFERENCES otra_tablaB(Campo Tabla B) [acciones_ON_DELETE][acciones_ON_UPDATE]
