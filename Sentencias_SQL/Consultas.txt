@@ -2,7 +2,21 @@
 
 //Seleccionar los registros que estan en una tabla pero en otra de referencia no
 	select * from <<Tabla A>> where <<Campo a compara de Tabla A>> not in (select <<Campo de la tabla B a comparar>> from <<Tabla B>>);
+	En linq: (from db in bd_agenda.t_formulario where !(from db2 in bd_agenda.t_contador select db2.IdFormulario).Contains(db.Id) select db).ToList();
 
 
 //Agregar integridad referencial a dos tablas
 	ALTER TABLE nombre_tablaA ADD [CONSTRAINT símbolo] FOREIGN KEY(Campo Tabla A) REFERENCES otra_tablaB(Campo Tabla B) [acciones_ON_DELETE][acciones_ON_UPDATE]
+	alter table canalizaciones add constraint const_002 foreign key(id_subsiscanaliza) references subsiscanaliza(id_subsiscanaliza);
+
+
+
+//cambiar contraseña y dar todos los privilegios a usuario en MySQL
+	UPDATE mysql.user SET Password=PASSWORD('acatucontraseña') WHERE User='root'; 
+	FLUSH PRIVILEGES;
+
+//Caracteres especiales e idioma en tabla MySQL
+	ALTER TABLE discapacidad.usuarios default charset=utf8 collate= utf8_spanish_ci;
+
+
+
