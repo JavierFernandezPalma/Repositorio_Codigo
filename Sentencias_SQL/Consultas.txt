@@ -9,6 +9,8 @@
 	ALTER TABLE nombre_tablaA ADD [CONSTRAINT símbolo] FOREIGN KEY(Campo Tabla A) REFERENCES otra_tablaB(Campo Tabla B) [acciones_ON_DELETE][acciones_ON_UPDATE]
 	alter table canalizaciones add constraint const_002 foreign key(id_subsiscanaliza) references subsiscanaliza(id_subsiscanaliza);
 
+//Convertir string en fecha y adicionarle un dia
+	select * from nombre_tablaA where date_add(STR_TO_DATE(nombre_tablaA.campo,'%d/%m/%Y'), interval 1 day) <= curdate();
 
 
 //cambiar contraseña y dar todos los privilegios a usuario en MySQL
@@ -17,6 +19,15 @@
 
 //Caracteres especiales e idioma en tabla MySQL
 	ALTER TABLE discapacidad.usuarios default charset=utf8 collate= utf8_spanish_ci;
+
+//Cargar datos masivo
+	LOAD DATA LOCAL INFILE 'C:/Cargue.csv'
+INTO TABLE agenda.t_formulario
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY '\n';
+
+
+select * from agenda.t_formulario where agenda.t_formulario.Id in (select agenda.tabla_id.IdBorrar from agenda.tabla_id) and agenda.t_formulario.EstadoAgendamiento = 5;
 
 
 //Iniciar MySQL por consola
