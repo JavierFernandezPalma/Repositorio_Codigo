@@ -137,3 +137,12 @@ PARA AGREGAR CAMBIOS A GITHUB
 
 //Enviado cambios a repositorio
 	git push origin master
+
+
+ACTUALIZAR
+-----------------------------------------------------------------------------------------------------
+//Actualizar todas las copias locales de sucursales
+	git fetch - all 
+
+//Actualizar sucursal de seguimiento local
+	git pull -all

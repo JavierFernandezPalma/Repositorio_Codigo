@@ -13,4 +13,5 @@
 	4. En el administrador del IIS => Grupo de aplicaciones => por defecto apunta a DefaultAppPool, doble clik y seleccionamos la version mas reciente.
 	5. Publicar el proyecto: En el proyecto click derecho en Web => Publish => publish method (File System) => ruta donde va a estar el proyecto (inetpub/wwwroot por defecto).
 	6. Convertir publicación en aplicación: En IIS desplegar las carpetas, si tiene icono de carpeta no ha sido convertida en aplicación => click derecho (convertir aplicación).
-	7. Ruta del servidor + nombre aplicación => localhost/NombreAplicacion. 
+	7. Ruta del servidor + nombre aplicación => localhost/NombreAplicacion.
+	8. Habilitar la característica de examen de directorios en IIS => Administrador de Internet Information Services => Examen de directorios FTP => habilitar 
