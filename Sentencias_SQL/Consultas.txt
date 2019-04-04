@@ -33,5 +33,26 @@ select * from agenda.t_formulario where agenda.t_formulario.Id in (select agenda
 //Iniciar MySQL por consola
 	
 
+//Optimizar MySQL para que utilice adecuadamente el bufer
+
+		# Axede20190321 EAQC - innodb_buffer_pool_size=8M
+		innodb_buffer_pool_size=8G //Agregar este valor a instalación de servidor dedicado el 80% de la RAM
+
+		# Axede20190321 EAQC - innodb_log_file_size=48M
+		innodb_log_file_size=1G  //Agregar este valor a instalación de servidor dedicado maximo 1G
+
+		# Axede20190321 EAQC - sort_buffer_size=256K
+		sort_buffer_size=1G  //Agregar este valor a instalación de servidor dedicado
+
+//Tratar los registros duplicados en un INSERT de MySQL
+		URL: https://andrezgz.wordpress.com/2014/10/14/tratar-los-registros-duplicados-en-un-insert-de-mysql/
+
+		INSERT IGNORE INTO nombre_tablaA (nombre_tablaA.campo1, nombre_tablaA.campo2)(SELECT * FROM nombre_tablaB);
+
+		
+
+ 
+
+
 
 
