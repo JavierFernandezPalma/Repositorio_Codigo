@@ -1,0 +1,3 @@
+//---------------------Comandos Linux----------------------------------
+    Iniciar como usuario root:
+        su - (+ Enter)

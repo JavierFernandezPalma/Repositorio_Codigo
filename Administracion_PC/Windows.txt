@@ -1,0 +1,22 @@
+//Quitar servicio bloqueado
+
+Para ver el servicio se utiliza el nombre corto que aparece en las propiedades del servicio <<Service name>>
+Luego en un CMD como administrador vemos si el servicio realmente existe 
+
+1. sc queryex [nombrecortodelservicio]
+
+En caso que que muestre información referente al servicio en cuestión, para eliminarlo se utiliza el comando
+
+2. sc delete [nombrecortodelservicio]
+
+Para detener el servicio que se quedo pegado se realiza la busqueda con la ejecución de 1 y nos devolverá ciertos datos del servicio, entre ellos el PID, y después ejecutaremos, luego se detiene 
+con el siguiente comando
+
+3. taskkill /f /pid [PID]
+
+//------------------Convertir formato a USB
+    Descripción: solo para unidades en formato distinto a NTFS
+    convert [unidad]: /FS:[NTFS-FAT32]
+
+//------------------Formatear USB
+    format /FS:[NTFS-FAT32] [unidad]:
